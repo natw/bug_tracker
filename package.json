@@ -1,0 +1,11 @@
+{
+  "name": "bug_tracker",
+  "description": "bug_tracker",
+  "version": "1.0.0",
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "elm-webpack-loader": "^3.0.6"
+  }
+}
