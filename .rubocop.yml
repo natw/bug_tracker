@@ -1,0 +1,7 @@
+#.rubocop.yml
+inherit_from:
+  - https://raw.githubusercontent.com/LiveWatch/rubocop-config/master/.rubocop-lw.yml
+
+# Overrides can go here, but try to conform to LW standards when possible.
+Style/Documentation:
+  Enabled: false
