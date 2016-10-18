@@ -36,7 +36,7 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div [] [ text "this is elm" ]
+    div [] [ text "such elm, wow" ]
 
 
 subscriptions : Model -> Sub Msg
