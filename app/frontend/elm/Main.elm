@@ -1,42 +1,34 @@
 module Main exposing (..)
 
+import Debug exposing (log)
 import Html.App as App
-import Html exposing (..)
-import Html.Attributes exposing (..)
+import Views
+import Types exposing (..)
 
 
 main =
     App.program
         { init = init
-        , view = view
+        , view = Views.view
         , update = update
         , subscriptions = subscriptions
         }
 
 
-type alias Model =
-    {}
-
-
-type Msg
-    = Whatever
-
-
 init : ( Model, Cmd Msg )
 init =
-    Model ! []
+    Model [] ! []
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        Whatever ->
-            model ! []
-
-
-view : Model -> Html Msg
-view model =
-    div [] [ text "such elm, wow" ]
+        OpenModal ->
+            let
+                _ =
+                    log "OpenModal" 0
+            in
+                model ! []
 
 
 subscriptions : Model -> Sub Msg
