@@ -1,2 +1,4 @@
 var Elm = require('../elm/Main');
-Elm.Main.embed(document.getElementById('container'));
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+var container = document.getElementById('container');
+if(container) { Elm.Main.embed(container); }
