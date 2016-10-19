@@ -1,4 +1,4 @@
-module Main exposing (..)
+port module Main exposing (..)
 
 import Debug exposing (log)
 import Html.App as App
@@ -17,18 +17,29 @@ main =
 
 init : ( Model, Cmd Msg )
 init =
-    Model [] ! []
+    let
+        model =
+            { bugs = []
+            , showNewBugModal = False
+            }
+    in
+        model ! []
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        OpenModal ->
-            let
-                _ =
-                    log "OpenModal" 0
-            in
-                model ! []
+        OpenNewBugModal ->
+            model ! [ openModal "#newBugModal" ]
+
+        CloseNewBugModal ->
+            model ! [ closeModal "#newBugModal" ]
+
+
+port openModal : String -> Cmd msg
+
+
+port closeModal : String -> Cmd msg
 
 
 subscriptions : Model -> Sub Msg

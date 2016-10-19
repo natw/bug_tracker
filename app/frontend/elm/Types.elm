@@ -9,8 +9,10 @@ type alias Bug =
 
 type alias Model =
     { bugs : List Bug
+    , showNewBugModal : Bool
     }
 
 
 type Msg
-    = OpenModal
+    = OpenNewBugModal
+    | CloseNewBugModal

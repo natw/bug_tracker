@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
@@ -62,6 +63,14 @@ module.exports = {
 	resolve: {
     extensions: ['', '.js', '.elm'],
   },
+
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    })
+  ],
 
 	output: {
 		path: path.join(__dirname, 'app', 'assets', 'javascripts'),
